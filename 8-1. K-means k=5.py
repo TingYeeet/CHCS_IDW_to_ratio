@@ -48,7 +48,7 @@ for year in range(2015, 2020):
 
     # 每鄉鎮 × 每週矩陣
     df_pivot = df_year.pivot_table(index=["ID", "town"], columns="week", values="PM25")
-    df_pivot = df_pivot.reindex(columns=range(1, 52))  # 確保週數一致
+    df_pivot = df_pivot.reindex(columns=range(1, 53))  # 確保週數一致
     df_pivot = df_pivot.fillna(df_pivot.mean(axis=1))  # 補上缺值
 
     # === KMeans 分群 ===

@@ -3,7 +3,7 @@ import os
 import pandas as pd
 
 # 手動分群資料夾
-manual_folder = "./8_clustering_result/cluster_manual_based_on_2019"
+manual_folder = "./8_clustering_result/cluster_manual_based_on_pm25-2019"
 
 # 五個分群檔案
 cluster_files = [f"PM25_time_group_2019_rank{i}.csv" for i in range(1, 6)]

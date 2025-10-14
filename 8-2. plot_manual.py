@@ -11,7 +11,7 @@ plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei', 'SimHei', 'Microsoft Ya
 plt.rcParams['axes.unicode_minus'] = False
 
 # 輸出資料夾
-output_folder = "./8_clustering_result/cluster_manual_based_on_2019"
+output_folder = "./8_clustering_result/cluster_manual_based_on_pm25-2019"
 os.makedirs(output_folder, exist_ok=True)
 
 # 顏色設定（高→低）
@@ -28,7 +28,7 @@ main_island_bounds = box(119.9, 21.8, 122.1, 25.5)
 taiwan_main = taiwan_map[taiwan_map.intersects(main_island_bounds)].copy()
 
 # === 讀取手動分群結果 ===
-manual_folder = "./8_clustering_result/cluster_manual_based_on_2019"
+manual_folder = output_folder
 cluster_files = [f"PM25_time_group_2019_rank{i}.csv" for i in range(1, 6)]
 
 cluster_list = []
