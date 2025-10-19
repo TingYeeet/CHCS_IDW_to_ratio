@@ -1,3 +1,5 @@
+# 把就診比例資料(周就診轉比例)和空汙資料(6_exposure_by_town)合併
+# 然後使用PM25_manual_cluster_2019.csv把就診比例資料換算成以大區域為單位的
 import os
 import pandas as pd
 from functools import reduce
