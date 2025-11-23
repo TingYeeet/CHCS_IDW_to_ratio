@@ -35,7 +35,8 @@ main_island_bounds = box(119.9, 21.8, 122.1, 25.5)
 taiwan_main = taiwan_map[taiwan_map.intersects(main_island_bounds)].copy()
 
 # === 3️⃣ 定義顏色（由高到低） ===
-colors_hex = ["#AA04AA", "#FF0000", "#FFA500", "#FFFF00", "#23B623"]
+# colors_hex = ["#AA04AA", "#FF0000", "#FFA500", "#FFFF00", "#23B623"]
+colors_hex = ["#D62728", "#FF7F0E", "#BCBD22", "#2CA02C", "#1F77B4"]
 
 # === 4️⃣ 逐年執行分群 ===
 for year in range(2015, 2020):

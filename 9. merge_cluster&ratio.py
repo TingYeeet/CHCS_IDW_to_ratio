@@ -7,7 +7,7 @@ from functools import reduce
 # === 1️⃣ 檔案路徑設定 ===
 disease_folder = "./周就醫轉比例"
 exposure_folder = "./6_exposure_by_town"
-cluster_path = "./8_clustering_result/cluster_manual_based_on_pm25-2019/PM25_manual_cluster_2019.csv"
+cluster_path = "./8_clustering_result/PM25_cluster_2019.csv"
 output_folder = "./9_disease_with_exposure"
 os.makedirs(output_folder, exist_ok=True)
 
@@ -87,6 +87,17 @@ for file in os.listdir(disease_folder):
         on=["year", "week", "cluster"],
         how="left"
     )
+
+    # === 檢查特定週缺漏情況（可移除或註解） ===
+    print("\n🔍 檢查宜花東 2016 week 1")
+    print("=== 疾病資料 ===")
+    print(df_disease_grouped.query("cluster == 5 and year == 2016 and week == 1"))
+
+    print("=== 空汙資料 ===")
+    print(df_expo_grouped.query("cluster == 5 and year == 2016 and week == 1"))
+
+    print("=== 合併後 ===")
+    print(merged.query("cluster == 5 and year == 2016 and week == 1"))
 
     # 保留需要的欄位
     merged = merged[[
